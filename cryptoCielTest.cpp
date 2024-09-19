@@ -12,6 +12,15 @@ int main()
 	std::string File = "chat.txt";
 	std::cout << LM.CalculateFileSHA256(File) << std::endl;
 
+	AesGestion coco;
+	coco.GenerateAESKey();
+	coco.SaveAESKeyToFile("aes_random.key");
+	coco.EncryptFileAES256("chat.txt", "chatencrypt.txt");
+	coco.DecryptFileAES256("chatencrypt.txt", "chatdecrypt.txt");
+
+
+	return 0;
+
 }
 
 
